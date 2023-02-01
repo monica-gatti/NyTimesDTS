@@ -1,0 +1,8 @@
+# syntax=docker/dockerfile:1
+FROM python:latest
+COPY ./src/batch_requirements.txt ./src/batch_requirements.txt
+RUN pip install -r ./src/batch_requirements.txt
+COPY ./src/TimeWiresAll.py ./src/TimeWiresAll.py
+COPY ./src/helpers ./src/helpers/
+CMD ["python3", "./src/TimeWiresAll.py"]
+
